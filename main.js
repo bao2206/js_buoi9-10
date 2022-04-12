@@ -61,7 +61,7 @@ function getEmployeeInformation() {
   // flag &= validation.checkDate(dateWork, "tbNgay", "Ngày làm không để trống");
   flag &=
     validation.emptycheck(salaryBasic, "tbLuongCB", "Lương không để trống") &&
-    validation.checkLength(
+    validation.checkValue(
       salaryBasic,
       "tbLuongCB",
       "Lương cơ bản 1000000 - 20000000",
@@ -75,7 +75,7 @@ function getEmployeeInformation() {
   );
   flag &=
     validation.emptycheck(hourWork, "tbGiolam", "Giờ làm không để trống") &&
-    validation.checkHour(
+    validation.checkValue(
       hourWork,
       "tbGiolam",
       "Giờ làm trong tháng từ khoảng 80 - 200 giờ",
@@ -156,7 +156,7 @@ function fixInfo(nickEmployee) {
   getEle("btnCapNhat").style.display = "inline-block";
   //Get infor of employee
   var employee = listofemployees.editEmployeeList(nickEmployee);
-
+  getEle("btnThemNV").style.display = "none";
   if (employee) {
     //Show employee infor outside the input card
     getEle("tknv").value = employee.nick;

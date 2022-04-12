@@ -83,7 +83,7 @@ function Validation() {
     return false;
   };
 
-  this.checkHour = function (value, errorId, mess, min, max) {
+  this.checkValue = function (value, errorId, mess, min, max) {
     if (value >= min && value <= max) {
       getEle(errorId).innerHTML = "";
       getEle(errorId).style.display = "none";
